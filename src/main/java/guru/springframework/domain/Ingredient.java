@@ -19,7 +19,7 @@ public class Ingredient {
     @ManyToOne    //cascade here is not used bc if we deleted an ingredient we dont want to cascade that and delete the recipe
     private Recipe recipe;//it belongs to a recipe at least
 
-    
+
     public Long getId() {
         return id;
     }

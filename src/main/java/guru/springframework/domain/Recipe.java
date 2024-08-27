@@ -27,6 +27,9 @@ public class Recipe {
     @Lob //to store image or big objects into database
     private Byte [] image;
 
+    @Enumerated(EnumType.STRING)//we use type string will overwrite behaviour of the enum
+    private  Difficulty difficulty; //will going to store the enum value into database
+
 
     public Long getId() {
         return id;
@@ -110,5 +113,21 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+    }
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }
