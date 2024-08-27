@@ -1,9 +1,12 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe {
+//Recipe and ingredient is a bi-directional
+// A recipe is gonna have many ingredients, but ingredients will have just one Recipe
 
     //own id value
     @Id
@@ -17,6 +20,9 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe") //relationship from recipe to ingredient
+    private Set<Ingredient> ingredients; //Set is an unordered collection of objects in which duplicate values cannot be stored
 
     @Lob //to store image or big objects into database
     private Byte [] image;
