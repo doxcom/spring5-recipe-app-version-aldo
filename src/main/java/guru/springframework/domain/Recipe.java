@@ -2,7 +2,7 @@ package guru.springframework.domain;
 
 import javax.persistence.*;
 import java.util.Set;
-
+//RECIPE is going to be Primary Object
 @Entity
 public class Recipe {
 //Recipe and ingredient is a bi-directional
