@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 //RECIPE is going to be Primary Object
 @Entity
@@ -19,10 +20,15 @@ public class Recipe {
     private Integer servings;
     private String source;
     private String url;
-    private String directions;
+
+    @Lob
+    private String directions; //modified to accept more characters
+
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe") //relationship from recipe to ingredient
-    private Set<Ingredient> ingredients; //Set is an unordered collection of objects in which duplicate values cannot be stored
+    private Set<Ingredient> ingredients = new HashSet<>(); //Set is an unordered collection of objects in which duplicate values cannot be stored
+
+
 
     @Lob //to store image or big objects into database
     private Byte [] image;
@@ -37,7 +43,7 @@ public class Recipe {
     @ManyToMany
     @JoinTable(name = "recipe_category", joinColumns = @JoinColumn(name ="recipe_id"),
             inverseJoinColumns = @JoinColumn( name = "category_id"))
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
 
 
     public Long getId() {

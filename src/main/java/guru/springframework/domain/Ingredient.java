@@ -19,6 +19,9 @@ public class Ingredient {
     @ManyToOne    //cascade here is not used bc if we deleted an ingredient we dont want to cascade that and delete the recipe
     private Recipe recipe;//it belongs to a recipe at least
 
+    public Ingredient(String ripeAvocados, BigDecimal bigDecimal, UnitOfMeasure eachUom) {
+    }
+
 
     public Long getId() {
         return id;
