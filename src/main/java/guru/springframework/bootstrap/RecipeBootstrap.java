@@ -113,11 +113,13 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("Guacamole is best eaten right after it's made. Like apples, avocados start to oxidize and turn brown once they've been cut. That said, the acid in the lime juice you add to guacamole can help slow down that process. And if you store the guacamole properly, you can easily make it a few hours ahead if you are preparing for a party. ");
 
-        guacNotes.setRecipe(guacRecipe);
+
+
+       // guacNotes.setRecipe(guacRecipe);
          guacRecipe.setNotes(guacNotes);
 
-         guacRecipe.getIngredients().add(new Ingredient("ripe avocados",new BigDecimal(2), eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("salt",new BigDecimal(".5"), teaSpoonUom));
+         guacRecipe.addIngredient(new Ingredient("ripe avocados",new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("salt",new BigDecimal(".5"), teaSpoonUom));
 
 
         guacRecipe.getCategories().add(americanCategory);
