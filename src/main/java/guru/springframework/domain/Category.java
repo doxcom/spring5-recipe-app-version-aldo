@@ -8,7 +8,7 @@ import java.util.Set;
 
 //Data is going include, getter, setter equals and hashcode on this class
 @Data
-@EqualsAndHashCode(exclude={"recipes"})
+@EqualsAndHashCode(exclude={"recipes"}) //to avoid bi-directional references
 @Entity
 public class Category {
 
