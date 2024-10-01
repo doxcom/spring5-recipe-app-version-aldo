@@ -1,8 +1,11 @@
 package guru.springframework.services;
 
+import guru.springframework.commands.RecipeCommand;
 import guru.springframework.domain.Recipe;
 
 import java.util.Set;
+
+
 
 public interface RecipeService {
 
@@ -12,7 +15,7 @@ public interface RecipeService {
 
  //   RecipeCommand findCommandById(Long l);
 
-   // RecipeCommand saveRecipeCommand(RecipeCommand command);
+    RecipeCommand saveRecipeCommand(RecipeCommand command);
 
    // void deleteById(Long idToDelete);
 }
