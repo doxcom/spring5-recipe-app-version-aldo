@@ -24,6 +24,7 @@
             <div class="pannel-group">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
+                        <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                         <div class="row">
                             <div class="col-md-3">
                                 <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
@@ -44,9 +45,9 @@
                                 <ul>
                                     <li th:remove="all">cat one</li>
                                     <li th:remove="all">cat two</li>
+                                    <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                     <li th:each="category : ${recipe.categories}"
-                                        th:text="${category.getDescription()}">cat three
-                                    </li>
+                                        th:text="${category.getDescription()}">cat three</li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
