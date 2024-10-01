@@ -15,12 +15,12 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-    //@RequestMapping("/recipe/show/{id}")
-    //public String showById(@PathVariable String id, Model model){
+    @RequestMapping("/recipe/show/{id}")
+    public String showById(@PathVariable String id, Model model){
 
-      //  model.addAttribute("recipe", recipeService.findById(new Long(id)));
+        model.addAttribute("recipe", recipeService.findById(new Long(id)));
 
-       // return "recipe/show";
+        return "recipe/show";
 
-    //}
+    }
 }
