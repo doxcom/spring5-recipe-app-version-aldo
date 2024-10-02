@@ -27,6 +27,8 @@ public class RecipeServiceImpl implements RecipeService{
         this.recipeToRecipeCommand = recipeToRecipeCommand;
     }
 
+
+
     @Override
     public Set<Recipe> getRecipes() {
         log.debug("im in the recipe service");
@@ -43,6 +45,11 @@ public class RecipeServiceImpl implements RecipeService{
             throw new RuntimeException("Recipe not found");
         }
         return  recipeOptional.get();
+    }
+
+    @Override
+    public RecipeCommand findCommandById(Long l) {
+        return recipeToRecipeCommand.convert(findById(l));
     }
 
     @Override
