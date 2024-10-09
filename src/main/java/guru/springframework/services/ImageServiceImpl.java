@@ -26,7 +26,7 @@ public class ImageServiceImpl implements ImageService {
     @Override
     @Transactional
     public void saveImageFile(Long recipeId, MultipartFile file) {
-
+     //converting image from java object to wrapper
         try {
             Recipe recipe = recipeRepository.findById(recipeId).get();
 
