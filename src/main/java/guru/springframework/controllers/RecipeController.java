@@ -4,7 +4,7 @@ import guru.springframework.commands.RecipeCommand;
 import guru.springframework.services.RecipeService;
 import javassist.NotFoundException;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -60,7 +60,7 @@ public class RecipeController {
         bindingResult.getAllErrors().forEach(objectError -> {
 
             log.debug(objectError.toString());
-            log
+
         });
         return RECIPE_RECIPEFORM_URL;
     }
