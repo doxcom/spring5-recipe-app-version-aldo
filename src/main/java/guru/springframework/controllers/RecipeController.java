@@ -3,7 +3,10 @@ package guru.springframework.controllers;
 import guru.springframework.commands.RecipeCommand;
 import guru.springframework.services.RecipeService;
 import javassist.NotFoundException;
-import net.bytebuddy.build.BuildLogger;
+
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ public class RecipeController {
 
 
     private static final String RECIPE_RECIPEFORM_URL = "recipe/recipeform";
+    private static final Logger log = LoggerFactory.getLogger(RecipeController.class);
     private final RecipeService recipeService;
 
     public RecipeController(RecipeService recipeService) {
@@ -49,13 +53,14 @@ public class RecipeController {
     }
 
     @PostMapping("recipe")
-    public String saveOrUpdate(@Valid @ModelAttribute ('recipe') RecipeCommand command, BindingResult bindingResult){
+    public String saveOrUpdate(@Valid @ModelAttribute ("recipe") RecipeCommand command, BindingResult bindingResult){
 
     if(bindingResult.hasErrors()){
 
-        bindingResult.getAllErrors().forEach(objectError ->{
-            BuildLogger.Adapter log = null;
+        bindingResult.getAllErrors().forEach(objectError -> {
+
             log.debug(objectError.toString());
+            log
         });
         return RECIPE_RECIPEFORM_URL;
     }
@@ -76,7 +81,7 @@ public class RecipeController {
     @ExceptionHandler(NotFoundException.class)
     public ModelAndView handleNotFound(Exception exception){
 
-       // log.error("Handling not found exception");
+        log.error("Handling not found exception");
         ModelAndView modelAndView = new ModelAndView();
 
         modelAndView.setViewName("404error");
