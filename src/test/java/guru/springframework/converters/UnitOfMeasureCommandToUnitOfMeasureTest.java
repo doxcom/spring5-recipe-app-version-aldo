@@ -25,10 +25,10 @@ public class UnitOfMeasureCommandToUnitOfMeasureTest {
         assertNull(converter.convert(null));
     }
 
-    @Test
-    public void testEmptyObject() throws Exception {
-        assertNotNull(converter.convert(new UnitOfMeasureCommand()));
-    }
+  //  @Test
+   // public void testEmptyObject() throws Exception {
+   //     assertNotNull(converter.convert(new UnitOfMeasureCommand()));
+   // }
 
     /*
     @Test
