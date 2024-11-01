@@ -4,4 +4,6 @@ to build docker file
 
 then run in docker(windows):
 
-docker run -d -p 8080:8080 spring-boot-docker
+-docker run -d -p 8080:8080 spring-boot-docker
+
+check http://localhost:8080/ in browser
