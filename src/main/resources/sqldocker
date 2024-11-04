@@ -1,0 +1,17 @@
+#to connect mysql on docker
+
+- docker run --name jt-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
+
+to run bash inside the mysql container
+- docker exec -it jt-mysql bash
+
+inside:
+- mysql --user=root -p
+p is for password, put password after
+
+-show databases;
+check databases and select one with:
+
+-user databa_name;
+
+-show tables;
