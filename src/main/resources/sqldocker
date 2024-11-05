@@ -12,6 +12,6 @@ p is for password, put password after
 -show databases;
 check databases and select one with:
 
--user databa_name;
+-user database_name;
 
 -show tables;
